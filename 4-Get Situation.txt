@@ -1,0 +1,18 @@
+function getSituation (i,j,grid)
+  
+  situation=Array(Int,5)
+  
+  North=(i==1)?  2   :grid[i-1,j];
+  East=(j==10)?  2   :grid[i,j+1];
+  South=(i==10)? 2   :grid[i+1,j];
+  West=(j==1)?   2   :grid[i,j-1];
+  Current= grid[i,j];
+  
+  situation=[North, South, East, West, Current];
+  
+  return situation;
+end
+
+grid =randbool (10,10)
+
+getSituation(5,5,grid)
